@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoanApplicationActivity"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/custom_toolbar_layout" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:orientation="vertical">
+
+            <!--Username-->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/spacing_mlarge" />
+
+            <android.support.design.widget.TextInputEditText
+                style="@style/LoanApplication"
+                android:inputType="text"
+                android:hint="@string/sign_up_full_name"
+                android:textColorHint="@color/textHint"
+                android:theme="@style/EditText.Login" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/spacing_mlarge" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="2"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputEditText
+                    style="@style/LoanApplication"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:layout_gravity="start"
+                    android:hint="@string/loan_application_id_number"
+                    android:textColorHint="@color/textHint"
+                    android:theme="@style/EditText.Login" />
+
+                <android.support.design.widget.TextInputEditText
+                    style="@style/LoanApplication"
+                    android:inputType="date"
+                    android:layout_weight="1"
+                    android:layout_gravity="end"
+                    android:hint="@string/sign_up_date_of_birth"
+                    android:textColorHint="@color/textHint"
+                    android:theme="@style/EditText.Login" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/spacing_mlarge" />
+
+            <android.support.design.widget.TextInputEditText
+                style="@style/LoanApplication"
+                android:inputType="numberDecimal"
+                android:hint="@string/mpesa_number"
+                android:textColorHint="@color/textHint"
+                android:theme="@style/EditText.Login" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/spacing_mlarge" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="2"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputEditText
+                    style="@style/LoanApplication"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:layout_gravity="start"
+                    android:hint="@string/loan_application_amount"
+                    android:textColorHint="@color/textHint"
+                    android:theme="@style/EditText.Login" />
+
+                <android.support.design.widget.TextInputEditText
+                    style="@style/LoanApplication"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:layout_gravity="end"
+                    android:hint="@string/loan_repayment_period"
+                    android:textColorHint="@color/textHint"
+                    android:theme="@style/EditText.Login" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/spacing_mlarge" />
+
+            <android.support.design.widget.TextInputEditText
+                style="@style/LoanApplication"
+                android:inputType="text"
+                android:hint="@string/loan_purpose"
+                android:textColorHint="@color/textHint"
+                android:theme="@style/EditText.Login" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/spacing_mlarge" />
+
+            <Button
+                android:id="@+id/apply_for_loan"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="200dp"
+                android:background="@drawable/custom_orange_rounded_button"
+                android:text="SUBMIT LOAN REQUEST"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:layout_height="55dp" />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</LinearLayout>

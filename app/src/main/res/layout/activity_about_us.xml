@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/custom_linear_layout_background"
+    tools:context=".AboutUsActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/toolbar_about_us"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/custom_toolbar_layout" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:padding="14dp"
+        android:layout_below="@+id/toolbar_about_us"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat = "@drawable/ic_bank_logo_dark"
+        android:gravity="center|center_horizontal"
+        android:contentDescription="@string/splash_logo_description"/>
+
+    <TextView
+        android:layout_below="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/white"
+        android:gravity="center_horizontal"
+        android:textSize="18sp"
+        android:text="@string/about_us_text"/>
+</RelativeLayout>

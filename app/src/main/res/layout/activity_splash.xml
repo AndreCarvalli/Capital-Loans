@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/image_capital_loans_splash"
+    tools:context=".SplashActivity">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat = "@drawable/ic_bank_logo"
+                android:gravity="center|center_horizontal"
+                android:contentDescription="@string/splash_logo_description"/>
+
+
+            <TextView
+                style="@style/SplashText"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textSize="40sp"
+                android:text="@string/app_name"/>
+
+            <TextView
+                style="@style/SplashText"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textSize="16sp"
+                android:text="@string/app_tag"/>
+
+            <TextView
+                style="@style/SplashText"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textSize="16sp"
+                android:text="@string/app_hours"/>
+
+            <Button
+                android:id="@+id/btn_splash_to_signup"
+                android:background="@drawable/custom_splash_to_signup_button"
+                android:layout_width="300dp"
+                android:layout_marginTop="80dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:textSize="16sp"
+                android:text="@string/splash_to_signup"
+                android:textColor="@color/grey_5"
+                android:textAllCaps="true"/>
+
+            <Button
+                android:id="@+id/btn_splash_to_signin"
+                android:background="@drawable/custom_splash_to_signin_button"
+                android:layout_width="300dp"
+                android:layout_marginTop="24dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="sign in"
+                android:textColor="@color/grey_60"
+                android:textAllCaps="true"/>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+</RelativeLayout>

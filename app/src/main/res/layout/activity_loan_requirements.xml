@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_10"
+    tools:context=".LoanRequirementsActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/toolbar_loan_rqt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/custom_toolbar_layout" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <!--REPLACE WITH LIST VIEW WITH AN ARRAY LIST-->
+    <LinearLayout
+        android:id="@+id/loan_rqts_lyt"
+        android:layout_below="@+id/toolbar_loan_rqt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/custom_linear_layout_background"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To qualify for a loan, you must:"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:text="Be a permanent Kenyan Resident"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:text="Have a valid government Issued ID"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:text="Have a valid government Issued ID"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:text="Be at least 18 years of age"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:text="Have been an active M-pesa or Airtel money user for at least two months"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/loan_rqts_lyt_others"
+        android:layout_below="@+id/loan_rqts_lyt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/custom_linear_layout_background"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="More Information:"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:text="Minimum amount you can borrow is Ksh 5,000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:text="You must be able to repay the loan within 24months at an interest rate of 7.5% p.a"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:text="Approval takes less than 10 minutes and loans get sent via Mpesa within 30 mins"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:text="After application, a customer care agent will get in touch and advice you further. The care giver will provide answers to any questions you might have "/>
+
+        </LinearLayout>
+</RelativeLayout>
