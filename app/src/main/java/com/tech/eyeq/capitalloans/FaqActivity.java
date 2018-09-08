@@ -1,5 +1,6 @@
 package com.tech.eyeq.capitalloans;
 
+import android.content.Intent;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 
+import com.tech.eyeq.capitalloans.config.SharedPrefManager;
 import com.tech.eyeq.capitalloans.utils.ViewAnimation;
 import static com.tech.eyeq.capitalloans.utils.ViewAnimation.expand;
 
@@ -26,6 +28,13 @@ public class FaqActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faq);
+
+        //Start Main Activity if user is logged in
+        if (!SharedPrefManager.getInstance(this).isLoggedIn()) {
+            finish();
+            startActivity(new Intent(this, SplashActivity.class));
+        }
+
         parent_view = findViewById(android.R.id.content);
 
         initComponent();
