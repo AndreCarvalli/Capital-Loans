@@ -32,7 +32,7 @@ public class SharedPrefManager {
     }
 
     //LoginActivity user and store user data
-    public void userLogin(User user) {
+    public void loginUser(User user) {
         SharedPreferences sharedPreferences = mContext.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(KEY_NAME, user.getName());
@@ -42,6 +42,19 @@ public class SharedPrefManager {
         editor.putString(KEY_DOB, user.getDob());
         editor.putBoolean(KEY_VERIFIED, user.getVerified());
         editor.apply();
+    }
+
+    //Return Logged in user
+    public User getUser() {
+        SharedPreferences sharedPreferences = mContext.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return new User(
+                sharedPreferences.getString(KEY_NAME, null),
+                sharedPreferences.getString(KEY_PHONE, null),
+                sharedPreferences.getString(KEY_ID_NO, null),
+                sharedPreferences.getString(KEY_TOKEN, null),
+                sharedPreferences.getString(KEY_DOB, null),
+                sharedPreferences.getBoolean(KEY_VERIFIED, false)
+        );
     }
 
     //Check if User is logged in or not

@@ -1,6 +1,8 @@
 package com.tech.eyeq.capitalloans;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -9,13 +11,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.tech.eyeq.capitalloans.config.SharedPrefManager;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private static final String TAG = "HomeActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,10 +94,27 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            finish();
-        } else {
-            Toast.makeText(getApplicationContext(), item.getTitle(), Toast.LENGTH_SHORT).show();
+        if (item.getItemId() == R.id.action_logout) {
+            final AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
+            builder.setTitle("Confirm Logout");
+            builder.setMessage("Do you wish to Logout?");
+            builder.setCancelable(true);
+            builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.cancel();
+                }
+            });
+            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    finish();
+                    SharedPrefManager.getInstance(getApplicationContext()).logout();
+                }
+            });
+
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
         }
         return super.onOptionsItemSelected(item);
     }

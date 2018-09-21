@@ -10,11 +10,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.ClientError;
 import com.android.volley.NetworkResponse;
 import com.android.volley.NoConnectionError;
 import com.android.volley.Request;
 import com.android.volley.Response;
-import com.android.volley.ServerError;
 import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
@@ -93,11 +93,11 @@ public class SignInActivity extends AppCompatActivity {
                             userJson.getString("id_no"),
                             obj.getString("token"),
                             userJson.getString("dob"),
-                            userJson.getBoolean("verified")
+                                userJson.getInt("verified") > 0
                         );
 
                         //storing the user in shared preferences
-                        SharedPrefManager.getInstance(getApplicationContext()).userLogin(user);
+                        SharedPrefManager.getInstance(getApplicationContext()).loginUser(user);
 
                         finish();
                         startActivity(new Intent(getApplicationContext(), HomeActivity.class));
@@ -112,7 +112,7 @@ public class SignInActivity extends AppCompatActivity {
                 public void onErrorResponse(VolleyError error) {
                     if (error instanceof TimeoutError || error instanceof NoConnectionError) {
                         noConnectError();
-                    } else if (error instanceof ServerError){
+                    } else if (error instanceof ClientError) {
                         NetworkResponse response = error.networkResponse;
                         if(response != null && response.data != null){
                             switch(response.statusCode) {
